@@ -1,8 +1,7 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 import './Header.css';
 
-export function Header(props) {
+export function Header() {
     return (
         <div className="header-wrapper">
             <h1 className="header-text">The Shoppies</h1>
