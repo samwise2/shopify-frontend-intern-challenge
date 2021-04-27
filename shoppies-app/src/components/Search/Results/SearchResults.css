@@ -1,0 +1,13 @@
+.search-results-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 10px;
+}
+
+.movie-item-wrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
