@@ -14,6 +14,7 @@ export function NominationList(props) {
             }
         }
         props.setNominations(newArr);
+        localStorage.setItem('nominations',JSON.stringify(newArr));
     }
 
     let nominees = [];

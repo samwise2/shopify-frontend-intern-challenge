@@ -9,6 +9,7 @@ export function SearchResults(props) {
         let arr = [...props.nominations];
         arr.push(props.results[index]);
         props.setNominations(arr);
+        localStorage.setItem('nominations',JSON.stringify(arr));
     }
 
     let results = [];

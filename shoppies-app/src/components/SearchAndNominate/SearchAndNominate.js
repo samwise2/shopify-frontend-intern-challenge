@@ -30,6 +30,13 @@ export function SearchAndNominate(props) {
     }
 
     useEffect(() => {
+        const savedNominations = localStorage.getItem('nominations');;
+        if (savedNominations) {
+          setNominations(JSON.parse(savedNominations));
+        }
+      }, []);
+
+    useEffect(() => {
         if(show) {
             setTimeout(() => setShow(false), 2000)
         }
