@@ -12,6 +12,16 @@ export function SearchResults(props) {
     }
 
     let results = [];
+    if (props.results === undefined) {
+        return (
+            <p>Sorry we couldn't find a movie with that title. Try another! 🔎</p>
+        );
+    }
+    if (props.results.length === 0) {
+        return (
+            <p>Your search results will appear here. Search any movie title above! 🔎</p>
+        );
+    }
     props.results.forEach((movie,index) => {
         let disable = props.nominations.length >= 5;
         for (let i=0; i<props.nominations.length; i++) {
@@ -23,7 +33,7 @@ export function SearchResults(props) {
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button variant="search" disabled={disable} onClick={() => saveToNominations(index)}>
+                        <Button variant="add" disabled={disable} onClick={() => saveToNominations(index)}>
                             <FontAwesomeIcon icon={faPlus}/>
                         </Button>
                     </div>
@@ -37,12 +47,6 @@ export function SearchResults(props) {
             </ListGroup.Item>
         );
     });
-
-    if (results.length === 0) {
-        return (
-            <p>Your search results will appear here. Search any movie title above! 🔎</p>
-        );
-    }
     return (
         <div className="search-results-wrapper">
                 <ListGroup>

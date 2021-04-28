@@ -78,8 +78,8 @@ export function SearchAndNominate(props) {
                         <SectionTitle
                             text="My Nominations"
                         />
-                        <Alert show={show} variant="success">
-                            That's all five nominations!
+                        <Alert show={show} variant="nominations">
+                            <strong>That's all five nominations!</strong>
                         </Alert>
                         <NominationList
                             nominations={nominations}

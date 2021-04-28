@@ -20,3 +20,20 @@
     margin-right: 10px;
 }
 
+.btn-add {
+    background-color: #96bf48;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: white;
+    color: #96bf48;
+    border-color: #96bf48;
+}
+
+.btn-add:disabled {
+    background-color: grey;
+    color: white;
+    border-color: transparent;
+}
+

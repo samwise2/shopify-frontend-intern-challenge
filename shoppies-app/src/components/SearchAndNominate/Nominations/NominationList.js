@@ -22,7 +22,7 @@ export function NominationList(props) {
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button variant="danger" onClick={() => removeNominee(movie)}>
+                        <Button variant="secondary" onClick={() => removeNominee(movie)}>
                             <FontAwesomeIcon icon={faTimes} />
                         </Button>
                     </div>
@@ -44,7 +44,7 @@ export function NominationList(props) {
 
     if (nominees.length === 0) {
         return (
-            <p>You don't have any nominations yet. Try starting with your favourite 🎬!</p>
+            <p>You don't have any nominations yet. Try starting with your favourite! 🎬</p>
         );
     }
     return (

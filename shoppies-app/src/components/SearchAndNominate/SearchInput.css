@@ -35,3 +35,8 @@
     width: '40rem';
     margin-bottom: 30px;
 }
+
+.alert-nominations {
+    color: white;
+    background-color: #96bf48;
+}
