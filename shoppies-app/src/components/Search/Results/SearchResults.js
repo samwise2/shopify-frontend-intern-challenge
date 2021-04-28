@@ -14,7 +14,7 @@ export function SearchResults(props) {
     let results = [];
     props.results.forEach((movie,index) => {
         let disable = false;
-        for (let i=0; i<props.nominations; i++) {
+        for (let i=0; i<props.nominations.length; i++) {
             if(props.nominations[i].imdbID === movie.imdbID) {
                 disable = true
             }
