@@ -4,7 +4,12 @@ import './Header.css';
 export function Header() {
     return (
         <div className="header-wrapper">
-            <h1 className="header-text">The Shoppies</h1>
+            <div className="title-wrapper">
+                <h1 className="header-text"><strong>The Shoppies</strong> 🎬</h1>
+            </div>
+            <div className="description-wrapper">
+                <h4 className="description-text">Search for any movie you'd like and nominate your favourites 🎉</h4>
+            </div>
         </div>
     );
 }
