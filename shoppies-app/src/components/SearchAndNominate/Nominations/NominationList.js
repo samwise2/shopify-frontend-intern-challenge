@@ -1,30 +1,25 @@
 import React from 'react';
-import { ListGroup, Button } from 'react-bootstrap';
+import { ListGroup, Button, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import './SearchResults.css';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import './NominationList.css';
 
-export function SearchResults(props) {
-    function saveToNominations(index) {
-        let arr = props.nominations.length === 0 ? [] : props.nominations;
-        arr.push(props.results[index]);
-        console.log('AAAAAAAAAAAAA');
-        console.log(arr);
-        props.setNominations(arr);
-    }
-
+export function NominationList(props) {
     let results = [];
-    props.results.forEach((movie,index) => {
+    props.results.forEach(movie => {
         results.push(
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button>
-                            <FontAwesomeIcon icon={faPlus} onClick={() => {console.log('ok'); saveToNominations(index);}}/>
+                        <Button variant="danger" onClick={() => console.log(props.results)}>
+                            <FontAwesomeIcon icon={faTimes} />
                         </Button>
                     </div>
+                    <div className="add-movie-wrapper">
+                        <Image src={movie.Poster} thumbnail className="movie-poster" />
+                    </div>
                     <div className="title-wrapper">
-                        {movie.Title}
+                        {movie.Title} + 1
                     </div>
                     <div className="date-wrapper">
                         {movie.Year}
@@ -48,4 +43,4 @@ export function SearchResults(props) {
     );
 }
 
-export default SearchResults;
+export default NominationList;
