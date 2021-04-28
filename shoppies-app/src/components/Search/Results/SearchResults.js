@@ -23,7 +23,7 @@ export function SearchResults(props) {
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button disabled={disable} onClick={() => saveToNominations(index)}>
+                        <Button variant="search" disabled={disable} onClick={() => saveToNominations(index)}>
                             <FontAwesomeIcon icon={faPlus}/>
                         </Button>
                     </div>
@@ -40,7 +40,7 @@ export function SearchResults(props) {
 
     if (results.length === 0) {
         return (
-            <h1>No Results</h1>
+            <p>Your search results will appear here. Search any movie title above! 🔎</p>
         );
     }
     return (

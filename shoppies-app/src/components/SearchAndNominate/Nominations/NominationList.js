@@ -44,7 +44,7 @@ export function NominationList(props) {
 
     if (nominees.length === 0) {
         return (
-            <h1>No Results</h1>
+            <p>You don't have any nominations yet. Try starting with your favourite 🎬!</p>
         );
     }
     return (

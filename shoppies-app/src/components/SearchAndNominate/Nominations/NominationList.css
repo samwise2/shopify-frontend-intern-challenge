@@ -1,6 +1,5 @@
 .search-results-wrapper {
-    display: flex;
-    justify-content: center;
+    display: inline;
     margin-bottom: 10px;
 }
 
