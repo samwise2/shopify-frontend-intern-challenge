@@ -1,5 +1,7 @@
 import React from 'react';
 import { ListGroup, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import './SearchResults.css';
 
 export function SearchResults(props) {
@@ -9,8 +11,15 @@ export function SearchResults(props) {
         results.push(
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
-                    <Button>Test</Button>
-                    {movie.Title}
+                    <div className="add-movie-wrapper">
+                        <FontAwesomeIcon icon={faPlusCircle} onClick={() => console.log("works")} />
+                    </div>
+                    <div className="title-wrapper">
+                        {movie.Title}
+                    </div>
+                    <div className="date-wrapper">
+                        {movie.Year}
+                    </div>
                 </div>
             </ListGroup.Item>
         );

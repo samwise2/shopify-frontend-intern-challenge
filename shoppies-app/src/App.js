@@ -10,9 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <div className="search-and-nominate">
-        <SearchAndNominate />
-      </div>
+      <SearchAndNominate />
     </div>
   );
 }

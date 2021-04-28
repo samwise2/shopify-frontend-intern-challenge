@@ -1,13 +1,27 @@
 .search-results-wrapper {
     display: flex;
     justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
     margin-bottom: 10px;
 }
 
 .movie-item-wrapper {
     display: flex;
-    justify-content: left;
     align-items: center;
 }
+
+.date-wrapper {
+    margin-left: auto;
+}
+
+.title-wrapper {
+    margin-right: 25px;
+}
+
+.add-movie-wrapper {
+    margin-right: 10px;
+}
+
+.add-movie-wrapper:hover {
+    cursor: pointer;
+}
+

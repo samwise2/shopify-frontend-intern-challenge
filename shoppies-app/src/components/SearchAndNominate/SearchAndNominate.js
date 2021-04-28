@@ -25,29 +25,55 @@ export function SearchAndNominate(props) {
     }
 
     return (
-        <div className="searchAndNominateWrapper">
-            <SearchInputText />
-            <div className="search-input-wrapper">
-                <InputGroup className="mb-3" size="lg">
-                    <FormControl
-                        placeholder="Movie Title"
-                        aria-label="Recipient's username"
-                        aria-describedby="basic-addon2"
-                        onChange={(event) => setSearchText(event.target.value)}
-                    />
-                    <InputGroup.Append>
-                        <Button 
-                            variant="outline-secondary"
-                            onClick={() => getMovies(searchText)}
-                        > <FontAwesomeIcon icon={faSearch} /> Search 
-                        </Button>
-                    </InputGroup.Append>
-                </InputGroup>
+        <div className="outest">
+            <div className="searchAndNominateWrapper">
+                <SearchInputText />
+                <div className="search-input-wrapper">
+                    <InputGroup className="mb-3" size="lg">
+                        <FormControl
+                            placeholder="Movie Title"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                            onChange={(event) => setSearchText(event.target.value)}
+                        />
+                        <InputGroup.Append>
+                            <Button 
+                                variant="outline-secondary"
+                                onClick={() => getMovies(searchText)}
+                            > <FontAwesomeIcon icon={faSearch} /> Search 
+                            </Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </div>
+                <SearchResults
+                    results={searchResults}
+                    nominate={setNominations}
+                />
             </div>
-            <SearchResults
-                results={searchResults}
-                nominate={setNominations}
-            />
+            <div className="searchAndNominateWrapper">
+                <SearchInputText />
+                <div className="search-input-wrapper">
+                    <InputGroup className="mb-3" size="lg">
+                        <FormControl
+                            placeholder="Movie Title"
+                            aria-label="Recipient's username"
+                            aria-describedby="basic-addon2"
+                            onChange={(event) => setSearchText(event.target.value)}
+                        />
+                        <InputGroup.Append>
+                            <Button 
+                                variant="outline-secondary"
+                                onClick={() => getMovies(searchText)}
+                            > <FontAwesomeIcon icon={faSearch} /> Search 
+                            </Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </div>
+                <SearchResults
+                    results={searchResults}
+                    nominate={setNominations}
+                />
+            </div>
         </div>
     );
 }
