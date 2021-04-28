@@ -26,9 +26,11 @@ export function NominationList(props) {
                             <FontAwesomeIcon icon={faTimes} />
                         </Button>
                     </div>
-                    <div className="add-movie-wrapper">
-                        <Image src={movie.Poster} thumbnail className="movie-poster" />
-                    </div>
+                    {   movie.Poster !== "N/A" &&
+                        <div className="add-movie-wrapper">
+                            <Image src={movie.Poster} thumbnail className="movie-poster" />
+                        </div>
+                    }
                     <div className="title-wrapper">
                         {movie.Title}
                     </div>

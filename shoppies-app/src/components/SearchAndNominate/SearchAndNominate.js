@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { InputGroup, Button, FormControl } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { InputGroup, Button, FormControl, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SectionTitle from '../Search/Input/SectionTitle';
@@ -11,6 +11,7 @@ export function SearchAndNominate(props) {
     const [searchText, setSearchText] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [nominations, setNominations] = useState([]);
+    const [show, setShow] = useState(false);
 
     function getMovies(searchText) {
         fetch(`http://www.omdbapi.com/?apikey=c3aee4f7&s=${searchText}`)
@@ -24,6 +25,18 @@ export function SearchAndNominate(props) {
             }
         )
     }
+
+    useEffect(() => {
+        if(show) {
+            setTimeout(() => setShow(false), 2000)
+        }
+    }, [show]);
+
+    useEffect(() => {
+        if(nominations.length === 5) {
+            setShow(true);
+        }
+    }, [nominations]);
 
     return (
         <div className="outest">
@@ -56,6 +69,9 @@ export function SearchAndNominate(props) {
                 <SectionTitle
                     text="My Nominations"
                 />
+                    <Alert show={show} variant="success">
+                        That's all five nominations!
+                    </Alert>
                 <NominationList
                     nominations={nominations}
                     setNominations={setNominations}

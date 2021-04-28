@@ -13,7 +13,7 @@ export function SearchResults(props) {
 
     let results = [];
     props.results.forEach((movie,index) => {
-        let disable = false;
+        let disable = props.nominations.length >= 5;
         for (let i=0; i<props.nominations.length; i++) {
             if(props.nominations[i].imdbID === movie.imdbID) {
                 disable = true
@@ -23,8 +23,8 @@ export function SearchResults(props) {
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button disabled={disable}>
-                            <FontAwesomeIcon icon={faPlus} onClick={() => {console.log('ok'); saveToNominations(index);}}/>
+                        <Button disabled={disable} onClick={() => saveToNominations(index)}>
+                            <FontAwesomeIcon icon={faPlus}/>
                         </Button>
                     </div>
                     <div className="title-wrapper">
