@@ -5,13 +5,24 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import './NominationList.css';
 
 export function NominationList(props) {
-    let results = [];
-    props.results.forEach(movie => {
-        results.push(
+    function removeNominee(movie) {
+        let arr = [...props.nominations];
+        let newArr = [];
+        for(let i=0; i<arr.length; i++) {
+            if(arr[i].imdbID !== movie.imdbID) {
+                newArr.push(arr[i]);
+            }
+        }
+        props.setNominations(newArr);
+    }
+
+    let nominees = [];
+    props.nominations.forEach(movie => {
+        nominees.push(
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button variant="danger" onClick={() => console.log(props.results)}>
+                        <Button variant="danger" onClick={() => removeNominee(movie)}>
                             <FontAwesomeIcon icon={faTimes} />
                         </Button>
                     </div>
@@ -19,7 +30,7 @@ export function NominationList(props) {
                         <Image src={movie.Poster} thumbnail className="movie-poster" />
                     </div>
                     <div className="title-wrapper">
-                        {movie.Title} + 1
+                        {movie.Title}
                     </div>
                     <div className="date-wrapper">
                         {movie.Year}
@@ -29,7 +40,7 @@ export function NominationList(props) {
         );
     });
 
-    if (results.length === 0) {
+    if (nominees.length === 0) {
         return (
             <h1>No Results</h1>
         );
@@ -37,7 +48,7 @@ export function NominationList(props) {
     return (
         <div className="search-results-wrapper">
                 <ListGroup>
-                    {results}
+                    {nominees}
                 </ListGroup>
         </div>
     );

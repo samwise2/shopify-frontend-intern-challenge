@@ -57,8 +57,8 @@ export function SearchAndNominate(props) {
                     text="My Nominations"
                 />
                 <NominationList
-                    results={nominations}
-                    nominate={setNominations}
+                    nominations={nominations}
+                    setNominations={setNominations}
                 />
             </div>
         </div>

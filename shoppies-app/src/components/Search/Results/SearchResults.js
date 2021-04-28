@@ -6,20 +6,24 @@ import './SearchResults.css';
 
 export function SearchResults(props) {
     function saveToNominations(index) {
-        let arr = props.nominations.length === 0 ? [] : props.nominations;
+        let arr = [...props.nominations];
         arr.push(props.results[index]);
-        console.log('AAAAAAAAAAAAA');
-        console.log(arr);
         props.setNominations(arr);
     }
 
     let results = [];
     props.results.forEach((movie,index) => {
+        let disable = false;
+        for (let i=0; i<props.nominations; i++) {
+            if(props.nominations[i].imdbID === movie.imdbID) {
+                disable = true
+            }
+        }
         results.push(
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button>
+                        <Button disabled={disable}>
                             <FontAwesomeIcon icon={faPlus} onClick={() => {console.log('ok'); saveToNominations(index);}}/>
                         </Button>
                     </div>
