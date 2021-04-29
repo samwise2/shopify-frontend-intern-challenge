@@ -21,7 +21,7 @@ export function NominationList(props) {
     }
 
     function getNomineeInfo(id) {
-        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=${id}`)
+        fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=${id}`)
         .then(res => res.json())
         .then(
             (result) => {

@@ -17,7 +17,7 @@ export function SearchAndNominate() {
         if (searchText.length === 0) {
             return;
         }
-        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${searchText}`)
+        fetch(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${searchText}`)
         .then(res => res.json())
         .then(
             (result) => {
