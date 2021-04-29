@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { InputGroup, Button, FormControl, Alert, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import SectionTitle from '../Search/Input/SectionTitle';
+import SectionTitle from './Shared/SectionTitle';
 import SearchResults from '../Search/Results/SearchResults';
 import NominationList from './Nominations/NominationList';
 import './SearchAndNominate.css';
