@@ -80,11 +80,12 @@ export function SearchAndNominate(props) {
                 </Card>
             </div>
             <div className="nominations-wrapper">
-                <Card className="search-card">
+                <Card className="nominations-card">
                     <Card.Body>
                         <SectionTitle
-                            text="My Nominations"
+                            text="Nominations"
                         />
+                        {nominations.length >0 && <p>We auto-save your nominations, so feel free to refresh the page or return later.</p>}
                         <Alert show={show} variant="nominations">
                             <strong>That's all five nominations!</strong>
                         </Alert>
@@ -94,6 +95,9 @@ export function SearchAndNominate(props) {
                         />
                     </Card.Body>
                 </Card>
+                <Alert className="nominees-click-clarify" show={nominations.length > 0} variant="nominations">
+                    <strong>Click on Your Nominees To See More Info</strong>
+                </Alert>
             </div>
         </div>
     );
