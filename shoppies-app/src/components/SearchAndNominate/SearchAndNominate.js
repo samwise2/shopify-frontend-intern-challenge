@@ -7,7 +7,7 @@ import SearchResults from '../Search/Results/SearchResults';
 import NominationList from './Nominations/NominationList';
 import './SearchAndNominate.css';
 
-export function SearchAndNominate(props) {
+export function SearchAndNominate() {
     const [searchText, setSearchText] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [nominations, setNominations] = useState([]);
