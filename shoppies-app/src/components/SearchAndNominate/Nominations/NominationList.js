@@ -41,7 +41,7 @@ export function NominationList(props) {
             <ListGroup.Item>
                 <div className="movie-item-wrapper">
                     <div className="add-movie-wrapper">
-                        <Button variant="dismiss" onClick={() => removeNominee(movie)}>
+                        <Button variant="remove" onClick={() => removeNominee(movie)}>
                             <FontAwesomeIcon icon={faTimes} />
                         </Button>
                     </div>
@@ -113,7 +113,7 @@ export function NominationList(props) {
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="add" onClick={() => setShowPopup(false)}>Close</Button>
+                        <Button variant="dismiss" onClick={() => setShowPopup(false)}>Close</Button>
                     </Modal.Footer>
                 </Modal>
         </div>

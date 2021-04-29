@@ -42,12 +42,22 @@
     align-self: flex-end;
 }
 
-.btn-dismiss {
+.btn-remove {
     background-color:#A8A8A8;
     color:white;
 }
 
-.btn-dismiss:hover {
+.btn-remove:hover {
     background-color:#989898;
+    color:white;
+}
+
+.btn-dismiss {
+    background-color:#96bf48;
+    color:white;
+}
+
+.btn-dismiss:hover {
+    background-color:#84a83e;
     color:white;
 }
