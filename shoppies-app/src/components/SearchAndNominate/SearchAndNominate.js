@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SectionTitle from '../Search/Input/SectionTitle';
 import SearchResults from '../Search/Results/SearchResults';
 import NominationList from './Nominations/NominationList';
-import './SearchInput.css';
+import './SearchAndNominate.css';
 
 export function SearchAndNominate(props) {
     const [searchText, setSearchText] = useState('');
