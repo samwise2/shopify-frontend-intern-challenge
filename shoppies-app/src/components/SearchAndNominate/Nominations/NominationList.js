@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ListGroup, Button, Image, Modal, Popover, Overlay, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { ListGroup, Button, Image, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import './NominationList.css';
