@@ -29,6 +29,12 @@ export function SearchAndNominate() {
         )
     }
 
+    function handleSearchByEnterKey(event) {
+        if (event.key === 'Enter') {
+            getMovies(searchText);
+        }
+    }
+
     useEffect(() => {
         const savedNominations = localStorage.getItem('nominations');;
         if (savedNominations) {
@@ -61,6 +67,7 @@ export function SearchAndNominate() {
                                     aria-label="Recipient's username"
                                     aria-describedby="basic-addon2"
                                     onChange={(event) => setSearchText(event.target.value)}
+                                    onKeyPress={(event) => handleSearchByEnterKey(event)}
                                 />
                                 <InputGroup.Append>
                                     <Button
