@@ -3,11 +3,11 @@ The Shoppies!
 
 This is the github repo for my Fall 2021 Shopify Frontend Internship Challenge!
 
-Features I added beyond the challenge description:
+## Features Added
 - Auto-saving nominations using localStorage (You can refresh the page or return to the link at a later time and your nominations will still be there, no need to manually save)
 - Click to View More Info About Your Nominees (You can click on the titles of your nominees to view a popup with more information about them!)
 
-Design Choices:
+## Design Choices
 
 - To try to align with Shopify's frontend stack, the webpage is built with React :)
 - I chose to use React Bootstrap to help quickly stanardize the styling of my components
